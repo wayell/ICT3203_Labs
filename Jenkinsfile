@@ -13,6 +13,7 @@ pipeline {
         }
 		stage('Test') {
             steps {
+				sh "chmod +x -R ${env.WORKSPACE}"
                 sh './jenkins/scripts/test.sh'
             }
         }
