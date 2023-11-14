@@ -3,6 +3,7 @@
 set -x
 docker run -d -p 80:80 --name my-apache-php-app php:7.2-apache
 docker cp ./src/. my-apache-php-app:/var/www/html
+chmod +x ./jenkins/scripts/*
 sleep 1
 set +x
 
