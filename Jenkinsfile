@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage ('Checkout') {
-            steps {
-                git branch:'lab9', url: 'https://github.com/wayell/ICT3203_Labs.git'
-                }
-            }
+        //stage ('Checkout') {
+        //    steps {
+        //        git branch:'lab9', url: 'https://github.com/wayell/ICT3203_Labs.git'
+        //        }
+        //    }
         stage('Code Quality Check via SonarQube') {
             steps {
                 script {
