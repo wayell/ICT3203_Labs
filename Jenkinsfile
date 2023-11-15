@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage ('Checkout') {
-            steps {
+        //stage ('Checkout') {
+            //steps {
                 // add your credentialsId if your repo is private. E.g., credentialsId: 'wayell'
-                git branch:'lab8', url: 'https://github.com/wayell/ICT3203_Labs.git'
-                }
-            }
+            //    git branch:'lab8', url: 'https://github.com/wayell/ICT3203_Labs.git'
+            //    }
+            //}
         stage ('Build') {
             steps {
                 sh '/var/jenkins_home/apache-maven-3.6.3/bin/mvn --batch-mode -V -U -e clean verify -Dsurefire.useFile=false -Dmaven.test.failure.ignore'
