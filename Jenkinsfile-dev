@@ -1,0 +1,69 @@
+pipeline {
+    agent any
+    
+    stages {
+        
+        stage('OWASP Dependency Check') {
+            steps {
+                // Analyze Dependencies for known vulnerabilities
+                dependencyCheck additionalArguments: '--format HTML --format XML --suppression suppressions.xml', odcInstallation: 'dependency-check'
+            }
+        }
+        stage('Build Web App images') {
+            steps {
+                sh 'cp .envback services/backend/.env'
+                // Build docker images
+                sh 'cd services/frontend && docker build -f Dockerfile.dev --no-cache -t frontend_testing .'
+                sh 'cd services/backend && docker build -f Dockerfile.dev --no-cache -t backend_testing .'
+            }
+        }
+        stage('Frontend Unit Testing Phase') {
+            steps{
+                // Set up environment to execute unit tests
+                sh 'docker run -d --rm --name frontend-testing frontend_testing'
+                script {
+                    def output = sh(script: "docker exec frontend-testing sh -c 'cd __test__ && node forgot_password-test.js'", returnStdout: true).trim()
+                    def output1 = sh(script: "docker exec frontend-testing sh -c 'cd __test__ && node Sign_up-test.js'", returnStdout: true).trim()
+                    def output2 = sh(script: "docker exec frontend-testing sh -c 'cd __test__ && node Landing-test.js'", returnStdout: true).trim()
+                }
+                // junit 'test-reports/*.xml'
+                sh 'docker stop frontend-testing || true'
+            }
+        }
+        
+        stage('Backend Unit Testing Phase') {
+            environment {
+                PORT = '8888'
+            }
+            steps{
+                // Set up environment to execute unit tests
+                sh 'docker run -d --rm --name backend-testing backend_testing'
+                script{
+                    def output = sh(script: 'docker exec backend-testing npm test', returnStdout: true).trim()
+                    echo "Docker Container Output:\n$output"
+                }
+                sh 'docker stop backend-testing || true'
+            }
+        }
+    }
+    post {
+        always {
+            
+            script {
+                // Remove images
+                sh 'docker stop backend-testing || true'
+                sh 'docker rmi backend_testing || true'
+                sh 'docker stop frontend-testing || true'
+                sh 'docker rmi frontend_testing || true'
+                sh 'docker builder prune -f'
+            }
+            dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+        }
+        //success {
+        //    dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+        //    junit '**/test_results/*.xml'
+        //}
+        
+    }
+    
+}

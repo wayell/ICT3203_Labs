@@ -1,0 +1,52 @@
+{
+    "simData": {
+        "imei": "984572341976531",
+        "mobileNo": "11111112",
+        "isActivated": true,
+        "autoroam": true,
+        "SMS": true,
+        "activationDate": "2023-07-03T00:00:00.000Z" 
+    },
+    "deviceData": {
+        "imei": "123456789012345",
+        "name": "Device 7",
+        "brand": "Brand 7",
+        "model": "Model 7",
+        "type": "Type 7", 
+        "server": "Server 7",
+        "firstDrawDate": "2023-07-03T00:00:00.000Z" 
+    },
+    "jobData": {
+        "jobNo": "000009",
+        "date":  "2023-06-01T00:00:00.000Z" ,
+        "type": "Uninstallation", 
+        "location": "689578", 
+        "technician": "Peter",
+        "evidence": [],
+        "remarks": "Some remark here"
+    },
+    "vehicleData": {
+        "carplate": "SQL92C",
+        "brand": "Lamborghini",
+        "model": "Aventador LP700-4",
+        "type": "Car",
+        "subtype": "Petrol"
+    },
+    "contractData": {
+        "start": "2021-06-01T00:00:00.000Z" , 
+        "end": "2023-05-31T00:00:00.000Z", 
+        "subscription": 40,
+        "scheme": "Rental",
+        "lastBilledMonth": "May",
+        "lastBilledPrice": 40, 
+        "remarks": ""
+    },
+    "clientData": {
+        "companyName": "BWM PTE LTD",
+        "alternateName": "SOME SUBSIDIARY OF BWM PTE LTD",
+        "type": "Engineering",
+        "poc": "88888888",
+        "country": "Singapore"
+    }
+  }
+  

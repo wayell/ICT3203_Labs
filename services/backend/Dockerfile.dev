@@ -1,0 +1,19 @@
+FROM node:16
+USER root
+
+RUN apt-get update && apt-get install -y -qq --fix-missing \
+    bash \
+    curl \
+    docker.io \
+    git \
+    libssl1.1
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+CMD ["npm", "start", "--", "--env-file", ".env"]

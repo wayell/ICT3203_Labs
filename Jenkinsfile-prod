@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage ('Initialization') {
+            steps{
+                // Setup the env files into each folders
+                sh 'cp .envfront services/frontend/.env'
+                sh 'cp .envback services/backend/.env'
+            }
+        }
+        stage('Build Web App images') {
+            steps {
+                // Cleaning up
+                sh 'docker stop frontend-server || true'
+                sh 'docker stop backend-server || true'
+                sh 'docker rm frontend-server || true'
+                sh 'docker rm backend-server || true'
+                // Remove images
+                sh 'docker rmi frontend_server || true'
+                sh 'docker rmi backend_server || true'
+                // Build docker images
+                sh 'cd services/frontend && docker build -f Dockerfile.prod --no-cache -t frontend_server .'
+                sh 'cd services/backend && docker build -f Dockerfile.prod --no-cache -t backend_server .'
+            }
+        }
+        stage('Deploy Web App') {
+            steps {
+                // Running Backend container
+                sh 'docker run -d -u root --name backend-server -v backend-data:/app/data -e VIRTUAL_HOST=api.competent-kapitsa.cloud -e VIRTUAL_PORT=8080 backend_server'
+                // Running Frontend container
+                sh 'docker run -d -u root --name frontend-server -v frontend-data:/app/data -e VIRTUAL_HOST=www.competent-kapitsa.cloud -e VIRTUAL_PORT=3000 frontend_server'
+                
+            }
+        }
+        stage('Clearing cache') {
+            steps{
+                sh 'docker builder prune -f'
+            }
+        }
+    }
+    
+}

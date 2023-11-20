@@ -1,54 +1,139 @@
-# Vulnerable Web Application 
+# Environment Setup
 
-![VulnWeb](https://github.com/OWASP/Vulnerable-Web-Application/blob/master/Resources/VulnWeb.png)
+## Pre-requisites
 
-## What is Vulnerable-Web-Application
+- [Node.js](https://nodejs.org/en/download/current)
+- [Environment Variables](https://drive.google.com/drive/folders/1QeBQyGiHBhnptG59HhXoh0zVKVI2jzh3?usp=sharing)
 
-Vulnerable-Web-Application is a website that is prepared for people who are interested in web penetration and who want to have
-information about this subject or to be working. In fact, the website is quite simple to install and use.
+##### Note: rename both env files to .env and place into their respective folders (services/backend or services/frontend)
 
-Vulnerable-Web-Application categorically includes Command Execution, File Inclusion, File Upload, SQL and XSS. For database-requiring
-categories, it creates a database under localhost with one button during setup. In case of corrupted or changed databases, you can
-create a database again.
+## Running the App On 2 Terminals 
+### Terminal 1:
 
-## Installation Guide
-
-If you want to run this tool, first of all you need to download web server solution like "xampp"- you can download xampp from
-[Xampp](https://www.apachefriends.org/tr/download.html). After your installation;
-
-For Windows you need to copy the files into the xampp/htdocs folder.
-
-For Mac Os  you need to install mampp and  copy the files into the mamp/htdocs folder.
-[Mampp](https://www.mamp.info/en/downloads/)
-
-For Linux after download our files first you need to open apache server and copy the files to /var/www/html
-
-## Docker Container
-You can also run the **Vulnerable Web Application** in Docker with the folowing command:
-
+##### From root directory:
 ```
-docker run -it --name vuln_app -p 9991:80 santosomar/vuln_app:latest /bin/bash
+cd services/backend && npm install
 ```
-**Note**: You can change the port 9991 to any port you desire depending your implementation. 
+##### In backend folder:
+```
+npm start
+```
 
-### Other Configurations:
+### Terminal 2:
+##### From root directory:
+```
+cd services/frontend && npm install
+```
+##### In frontend folder:
+```
+npm start
+test
+```
 
-The `php.ini` file should be  altered. You can find the location of your `php.ini` file under the folder which php is installed.
-- `allow_url_include` = on - Allows for Remote File Inclusion
-- `allow_url_fopen` = on - Allows for Remote File Inclusion
-- `safe_mode` = off - (If PHP <= v5.4) Allows for SQL Injection
-- `magic_quotes_gpc` = off - (If PHP <= v5.4) Allows for SQL Injection
-
-## Application Setup
-
-- After editing the previous configuration, open the Xampp Control Panel and start Apache,MySQL. 
-- Your MySQL credentials must stay the default credentials (e.g., username:root <-> password:"")
-- Open up the `index.php` file in the <b>Vulnerable Web Application</b> directory. Follow the directions and create database. 
-
-**Note**: You can reset the database at any time, if needed or if you run into any problems. Once the database is ready, you can go to homepage and start hacking.
-
-## License
-The contents of this repository are licensed under the GNU General Public License v3.0.
- 
-## Version
-1.0.0
+## Folder Structure
+```
+ict3x03-web-app
+├─ Jenkinsfile-dev
+├─ Jenkinsfile-prod
+├─ jest.config.js
+├─ README.md
+├─ services
+│  ├─ backend
+│  │  ├─ .env
+│  │  ├─ breached_passwords.txt
+│  │  ├─ Dockerfile.dev
+│  │  ├─ Dockerfile.prod
+│  │  ├─ index.js
+│  │  ├─ logs.log
+│  │  ├─ models
+│  │  │  ├─ model_bankaccount.js
+│  │  │  ├─ model_log.js
+│  │  │  ├─ model_otp.js
+│  │  │  ├─ model_token.js
+│  │  │  ├─ model_transaction.js
+│  │  │  └─ model_user.js
+│  │  ├─ package-lock.json
+│  │  ├─ package.json
+│  │  ├─ routes
+│  │  │  ├─ bankaccounts.js
+│  │  │  ├─ middleware.js
+│  │  │  ├─ transactions.js
+│  │  │  └─ users.js
+│  │  ├─ sample_data
+│  │  │  ├─ insertall.bat
+│  │  │  ├─ mongoimport.exe
+│  │  │  ├─ sample_bankaccounts.json
+│  │  │  ├─ sample_data_fake
+│  │  │  │  ├─ sample_all_data.json
+│  │  │  │  ├─ sample_clients.json
+│  │  │  │  ├─ sample_contracts.json
+│  │  │  │  ├─ sample_devices.json
+│  │  │  │  └─ sample_jobs.json
+│  │  │  ├─ sample_transactions.json
+│  │  │  └─ sample_users.json
+│  │  ├─ services
+│  │  │  ├─ database_handler.js
+│  │  │  ├─ email_handler.js
+│  │  │  ├─ jwt_handler.js
+│  │  │  ├─ log_handler.js
+│  │  │  ├─ otp_handler.js
+│  │  │  ├─ socket_handler.js
+│  │  │  └─ user_handler.js
+│  │  └─ tests
+│  │     ├─ 1_registration.test.js
+│  │     ├─ 2_login.test.js
+│  │     ├─ 3_middleware.test.js
+│  │     ├─ 4_jwt_handler.test.js
+│  │     ├─ 5_otp_handler.test.js
+│  │     └─ 6_user_handler.test.js
+│  └─ frontend
+│     ├─ .env
+│     ├─ Dockerfile.dev
+│     ├─ Dockerfile.prod
+│     ├─ package-lock.json
+│     ├─ package.json
+│     ├─ public
+│     │  ├─ favicon.ico
+│     │  ├─ index.html
+│     │  ├─ Logo.webp
+│     │  ├─ logo192.png
+│     │  ├─ logo512.png
+│     │  ├─ manifest.json
+│     │  ├─ profileIcon.webp
+│     │  └─ robots.txt
+│     ├─ README.md
+│     ├─ src
+│     │  ├─ App.css
+│     │  ├─ App.js
+│     │  ├─ Components
+│     │  │  ├─ AppNav.js
+│     │  │  └─ PrivateRoute.js
+│     │  ├─ Home
+│     │  │  ├─ ChartCurrency.js
+│     │  │  └─ Home.js
+│     │  ├─ index.css
+│     │  ├─ index.js
+│     │  ├─ Landing
+│     │  │  └─ Landing.js
+│     │  ├─ Services
+│     │  │  ├─ EmailService.js
+│     │  │  ├─ MySocket.js
+│     │  │  └─ VerifyUser.js
+│     │  ├─ Transactions
+│     │  │  └─ Transactions.js
+│     │  ├─ Transfer
+│     │  │  └─ Transfer.js
+│     │  └─ User
+│     │     ├─ ChangePassword.js
+│     │     ├─ EmailVerificationResult.js
+│     │     ├─ ForgetPassword.js
+│     │     ├─ PREmailVerificationResult.js
+│     │     ├─ Profile.css
+│     │     ├─ Profile.js
+│     │     └─ Register.js
+│     └─ __test__
+│        ├─ forgot_password-test.js
+│        ├─ Landing-test.js
+│        └─ Sign_up-test.js
+└─ suppressions.xml
+ ```

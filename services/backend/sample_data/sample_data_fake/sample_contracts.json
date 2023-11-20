@@ -1,0 +1,135 @@
+[
+    {
+        "_id": {
+            "$oid": "70e7c8b1246c80623448d001"
+        },
+        "start": {
+            "$date": "2023-06-01T00:00:00.000Z"
+        },
+        "end": {
+            "$date": "2023-12-31T00:00:00.000Z"
+        },
+        "subscription": 10,
+        "scheme": "Rental",
+        "lastBilledMonth": "June",
+        "lastBilledPrice": 10,
+        "remarks": "This is a remark",
+        "vehicle": {
+            "$oid": "80f9d8c1256c80723449e001"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "70e7c8b1246c80623448d002"
+        },
+        "start": {
+            "$date": "2023-06-13T00:00:00.000Z"
+        },
+        "end": {
+            "$date": "2024-05-31T00:00:00.000Z"
+        },
+        "subscription": 15,
+        "scheme": "Rental",
+        "lastBilledMonth": "June",
+        "lastBilledPrice": 15,
+        "remarks": "",
+        "vehicle": {
+            "$oid": "80f9d8c1256c80723449e002"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "70e7c8b1246c80623448d003"
+        },
+        "start": {
+            "$date": "2023-06-01T00:00:00.000Z"
+        },
+        "end": {
+            "$date": "2025-05-31T00:00:00.000Z"
+        },
+        "subscription": 20,
+        "scheme": "Rental",
+        "lastBilledMonth": "June",
+        "lastBilledPrice": 20,
+        "remarks": "",
+        "vehicle": {
+            "$oid": "80f9d8c1256c80723449e003"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "70e7c8b1246c80623448d004"
+        },
+        "start": {
+            "$date": "2021-06-24T00:00:00.000Z"
+        },
+        "end": {
+            "$date": "2023-05-31T00:00:00.000Z"
+        },
+        "subscription": 40,
+        "scheme": "Rental",
+        "lastBilledMonth": "May",
+        "lastBilledPrice": 40,
+        "remarks": "",
+        "vehicle": {
+            "$oid": "80f9d8c1256c80723449e004"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "70e7c8b1246c80623448d005"
+        },
+        "start": {
+            "$date": "2021-03-09T00:00:00.000Z"
+        },
+        "end": {
+            "$date": "2023-05-31T00:00:00.000Z"
+        },
+        "subscription": 40,
+        "scheme": "Rental",
+        "lastBilledMonth": "May",
+        "lastBilledPrice": 40,
+        "remarks": "",
+        "vehicle": {
+            "$oid": "80f9d8c1256c80723449e005"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "70e7c8b1246c80623448d006"
+        },
+        "start": {
+            "$date": "2021-06-01T00:00:00.000Z"
+        },
+        "end": {
+            "$date": "2023-05-31T00:00:00.000Z"
+        },
+        "subscription": 40,
+        "scheme": "Purchase",
+        "lastBilledMonth": "May",
+        "lastBilledPrice": 40,
+        "remarks": "",
+        "vehicle": {
+            "$oid": "80f9d8c1256c80723449e006"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "70e7c8b1246c80623448d007"
+        },
+        "start": {
+            "$date": "2022-07-17T00:00:00.000Z"
+        },
+        "end": {
+            "$date": "2023-05-31T00:00:00.000Z"
+        },
+        "subscription": 40,
+        "scheme": "Purchase",
+        "lastBilledMonth": "May",
+        "lastBilledPrice": 40,
+        "remarks": "",
+        "vehicle": {
+            "$oid": "80f9d8c1256c80723449e007"
+        }
+    }
+]

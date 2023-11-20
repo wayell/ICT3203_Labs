@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.App-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.App-content {
+  flex-grow: 1;
+  padding: 1vh 1vw;
+}
+
+.nav-link {
+  margin-left: 1vw;
+}
+
+a {
+  text-decoration: none !important;
+}

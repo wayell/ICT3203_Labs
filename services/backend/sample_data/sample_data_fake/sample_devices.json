@@ -1,0 +1,108 @@
+[
+    {
+        "_id": {
+            "$oid": "a1a2f8e1276c80923451a001"
+        },
+        "imei": "123456789012345",
+        "brand": "Brand 1",
+        "model": "Model 1",
+        "type": "Type 1",
+        "server": "Server 1",
+        "firstDrawDate": {
+            "$date": "2023-07-03T00:00:00.000Z"
+        },
+        "sim": {
+            "$oid": "70c457890123456789012345"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "a1a2f8e1276c80923451a002"
+        },
+        "imei": "234567890123456",
+        "brand": "Brand 2",
+        "model": "Model 2",
+        "type": "Type 2",
+        "server": "Server 2",
+        "firstDrawDate": {
+            "$date": "2023-03-24T00:00:00.000Z"
+        },
+        "sim": {}
+    },
+    {
+        "_id": {
+            "$oid": "a1a2f8e1276c80923451a003"
+        },
+        "imei": "345678901234567",
+        "brand": "Brand 3",
+        "model": "Model 3",
+        "type": "Type 3",
+        "server": "Server 3",
+        "firstDrawDate": {
+            "$date": "2023-04-01T00:00:00.000Z"
+        },
+        "sim": {
+            "$oid": "70c457890123456789012346"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "a1a2f8e1276c80923451a004"
+        },
+        "imei": "456789012345678",
+        "brand": "Brand 4",
+        "model": "Model 4",
+        "type": "Type 4",
+        "server": "Server 4",
+        "firstDrawDate": {
+            "$date": "2022-11-16T00:00:00.000Z"
+        },
+        "sim": {
+            "$oid": "70c457890123456789012347"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "a1a2f8e1276c80923451a005"
+        },
+        "imei": "456789012345679",
+        "brand": "Brand 5",
+        "model": "Model 5",
+        "type": "Type 5",
+        "server": "Server 5",
+        "firstDrawDate": {
+            "$date": "2022-11-16T00:00:00.000Z"
+        },
+        "sim": {
+            "$oid": "70c457890123456789012348"
+        }
+    },
+    {
+        "_id": {
+            "$oid": "a1a2f8e1276c80923451a006"
+        },
+        "imei": "456789012345688",
+        "brand": "Brand 6",
+        "model": "Model 6",
+        "type": "Type 6",
+        "server": "Server 6",
+        "firstDrawDate": {
+            "$date": "2022-11-16T00:00:00.000Z"
+        },
+        "sim": {}
+    },
+    {
+        "_id": {
+            "$oid": "a1a2f8e1276c80923451a007"
+        },
+        "imei": "456789012345678",
+        "brand": "Brand 7",
+        "model": "Model 7",
+        "type": "Type 7",
+        "server": "Server 7",
+        "firstDrawDate": {
+            "$date": "2022-11-16T00:00:00.000Z"
+        },
+        "sim": {}
+    }
+]

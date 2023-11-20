@@ -1,0 +1,106 @@
+[
+    {
+        "_id": {
+            "$oid": "60d6b8a1236c80523447c001"
+        },
+        "companyName": "ABSOLUTE SERVICES CO.",
+        "alternateName": "",
+        "type": "Construction",
+        "poc": "77777777",
+        "country": "Singapore",
+        "contracts": [
+            {
+                "$oid": "70e7c8b1246c80623448d001"
+            },
+            {
+                "$oid": "70e7c8b1246c80623448d002"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "60d6b8a1236c80523447c002"
+        },
+        "companyName": "BWM PTE LTD",
+        "alternateName": "SOME SUBSIDIARY OF BWM PTE LTD",
+        "type": "Engineering",
+        "poc": "88888888",
+        "country": "Singapore",
+        "contracts": [
+            {
+                "$oid": "70e7c8b1246c80623448d003"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "60d6b8a1236c80523447c003"
+        },
+        "companyName": "GEOGRAPHY ENGINEERING PTE LTD",
+        "alternateName": "",
+        "type": "Engineering",
+        "poc": "99999999",
+        "country": "Singapore",
+        "contracts": [
+            {
+                "$oid": "70e7c8b1246c80623448d004"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "60d6b8a1236c80523447c004"
+        },
+        "companyName": "XYZ Engineering Solutions",
+        "alternateName": "",
+        "type": "Engineering",
+        "poc": "98765432",
+        "country": "Singapore",
+        "contracts": [
+            {
+                "$oid": "70e7c8b1246c80623448d005"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "60d6b8a1236c80523447c005"
+        },
+        "companyName": "PQR Engineering Services",
+        "alternateName": "",
+        "type": "Engineering",
+        "poc": "55555555",
+        "country": "Singapore",
+        "contracts": [
+            {
+                "$oid": "70e7c8b1246c80623448d006"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "60d6b8a1236c80523447c006"
+        },
+        "companyName": "LMN Engineering Co.",
+        "alternateName": "",
+        "type": "Engineering",
+        "poc": "44444444",
+        "country": "Singapore",
+        "contracts": [
+            {
+                "$oid": "70e7c8b1246c80623448d007"
+            }
+        ]
+    },
+    {
+        "_id": {
+            "$oid": "60d6b8a1236c80523447c007"
+        },
+        "companyName": "INTERESTING COMPANY",
+        "alternateName": "",
+        "type": "Telecommunications",
+        "poc": "98227555",
+        "country": "Singapore",
+        "contracts": []
+    }
+]
